@@ -1,3 +1,9 @@
+* {
+    margin: 0; /* Remove as margens padrão dos elementos */
+    padding: 0; /* Remove os espaçamentos internos padrão */
+    box-sizing: border-box; /* Faz o padding e a borda serem considerados dentro da largura definida */
+}
+
 :root {
     --verdeescuro: #182923;
     --verdeapagado: #7bad88;
@@ -5,15 +11,21 @@
     
 }
 body {
+    margin: 0; /* Remove a margem padrão do navegador */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Fonte */
     color: var(--creme); /* Cor dos textos */
     background-color: var(--verdeescuro); /* Fundo */
+    min-height: 100vh; /* Página ocupa pelo menos toda a altura da tela */
+    display: flex; /* Organiza as áreas da página */
+    flex-direction: column; /* Organiza verticalmente */
 }
+
 
 /* CABEÇALHO */
 header {
     background-color: var(--verdeapagado); /* Fundo do cabeçalho */
+    width: 100%; /* Ocupa toda a largura */
 }
 
 header > .cabecalho {
@@ -85,6 +97,7 @@ footer {
     display: flex; /* Logo e informações lado a lado */
     align-items: center; /* Alinha verticalmente */
     justify-content: space-between; /* Distribui elementos */
+    margin-top: auto; /* Empurra o rodapé para o final da página */
 }
 
 footer img {
