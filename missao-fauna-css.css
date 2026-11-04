@@ -1,0 +1,98 @@
+:root {
+    --verdeescuro: #182923;
+    --verdeapagado: #7bad88;
+    --creme: #fff3d9;
+    
+}
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Fonte */
+    color: var(--creme); /* Cor dos textos */
+    background-color: var(--verdeescuro); /* Fundo */
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--verdeapagado); /* Fundo do cabeçalho */
+}
+
+header > .cabecalho {
+    display: flex; /* Logo e menu lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Distribui os elementos */
+    padding: 2px 2%; /* Espaçamento interno */
+    min-height: 135px; /* Altura do cabeçalho */
+}
+
+/* LOGO */
+header img {
+    width: 150px; /* Largura da logo */
+    height: auto; /* Mantém proporção */
+}
+
+/* MENU */
+header ul {
+    list-style-type: none; /* Retira as bolinhas */
+}
+
+header li {
+    display: inline-block; /* Links lado a lado */
+    margin-right: 40px; /* Espaço entre links */
+}
+
+header a {
+    text-decoration: none; /* Retira sublinhado */
+    font-weight: bold; /* Texto em negrito */
+    color: var(--verdeescuro); /* Cor dos links */
+    font-size: 30px; /* Tamanho dos links */
+}
+
+header a:hover {
+    color: var(--creme); /* Cor ao passar o mouse */
+}
+
+/* IMAGEM DO JOGO */
+.imagem-jogo {
+    width: 50%; /* Largura da área */
+    margin: 10px auto; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.imagem-jogo img {
+    width: 100%; /* Ocupa a largura da área */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Evita espaços extras */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* TEXTO DE APRESENTAÇÃO */
+.texto {
+    color: var(--creme); /* Cor do texto */
+    text-align: center; /* Texto centralizado */
+}
+
+.texto p {
+    font-size: 16px; /* Tamanho do texto */
+    line-height: 1.8; /* Espaçamento entre linhas */
+    margin-bottom: 20px; /* Espaço entre parágrafos */
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--verdeapagado); /* Fundo verde */
+    color: var(--verdeescuro); /* Cor do texto */
+    padding: 10px 2%; /* Espaçamento interno */
+    display: flex; /* Logo e informações lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Distribui elementos */
+}
+
+footer img {
+    width: 100px; /* Largura da logo */
+    height: auto; /* Mantém proporção */
+}
+
+footer p {
+    font-size: 14px; /* Tamanho do texto */
+    text-align: center; /* Centraliza informações */
+}
