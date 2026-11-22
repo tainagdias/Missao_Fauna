@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missão Fauna</title>
     <link rel="stylesheet" href="missao-fauna-css.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header> <!--cabeçalho do site-->
@@ -14,10 +15,15 @@
                     <img src="./imagens/logo-missao-fauna.png">
                 </a>
             </div>
-            <nav class="menu"> <!--menu de navegação-->
+            <button class="menu-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"> <!--botão do menu no celular-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal"> <!--menu de navegação-->
                 <ul>
-                    <li> <a href="index.html"> Página Inicial </a> </li>
-                    <li> <a href="./pages/infomacoes.html"> Informações do Jogo </a> </li>
+                    <li> <a href="index.html"> Home </a> </li>
+                    <li> <a href="./pages/infomacoes.html"> Sobre </a> </li>
                     <li> <a href="./pages/equipe.html"> Equipe </a> </li>
                     <li> <a href="./pages/ajude-nossos-personagens.html"> Ajude Nossos Personagens </a> </li>
                 </ul>
@@ -25,7 +31,7 @@
         </div>
     </header>
     <div class="imagem-jogo"> <!--Imagem mockup do jogo para a página inicial-->
-        <img src="./imagens/foto-provisoria-home.png">
+        <img src="./imagens/banner-home-hotsite.png" alt="Banner do jogo Missão Fauna">
     </div>
     <div class="apresentacao"> <!--Texto de apresentação do jogo-->
         <p>
@@ -41,6 +47,11 @@
             Prepare seus equipamentos e embarque nessa expedição!
         </p>
     </div>
+    <button class="voltar-topo" type="button" aria-label="Voltar ao início da página"> <!--botão de voltar ao topo-->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <footer> <!--rodapé do site - contatos-->
         <img src="./imagens/logo-missao-fauna.png">
         <p>

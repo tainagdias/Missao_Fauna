@@ -15,10 +15,15 @@
                     <img src="../imagens/logo-missao-fauna.png">
                 </a>
             </div>
-            <nav class="menu"> <!--menu de navegação-->
+            <button class="menu-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"> <!--botão do menu no celular-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal"> <!--menu de navegação-->
                 <ul>
-                    <li> <a href="../index.html"> Página Inicial </a> </li>
-                    <li> <a href="infomacoes.html"> Informações do Jogo </a> </li>
+                    <li> <a href="../index.html"> Home </a> </li>
+                    <li> <a href="infomacoes.html"> Sobre </a> </li>
                     <li> <a href="equipe.html"> Equipe </a> </li>
                     <li> <a href="ajude-nossos-personagens.html"> Ajude Nossos Personagens </a> </li>
                 </ul>
@@ -26,10 +31,10 @@
         </div>
     </header>
     <main>
-         <nav aria-label="menu das Informações do Jogo"> <!--submenu-->
-            <a href="#historia"> História do Jogo </a>
-            <a href="#objetivo"> Objetivo do Jogo </a>
-            <a href="componentes"> Componentes </a>
+        <nav class="submenu" aria-label="menu das Informações do Jogo"> <!--submenu-->
+            <a href="#historia"> História do Jogo <small>Diário de Campo</small> </a>
+            <a href="#objetivo"> Objetivo do Jogo <small>Missão do Explorador</small> </a>
+            <a href="#componentes"> Componentes <small>Kit Explorador</small> </a>
         </nav>
         <section id="historia"> <!--seção de história do Jogo - Diário de Campo -->
             <h2> Diário de Campo </h2>
@@ -69,7 +74,7 @@
                 <img class="frente" src="../cartas-interativas/frente-carta-mata.png" alt="Carta da Mata Atlântica">
                 <img class="verso" src="../cartas-interativas/carta-verso-mata.png" alt="">
                 <div class="info">
-                    <p>A Mata Atlântica é um dos biomas mais ricos em biodiversidade do planeta, apresentando florestas densas, rios, cachoeiras e diferentes formações vegetais. Estende-se por grande parte do litoral brasileiro e abriga inúmeras espécies de animais e plantas, incluindo algumas que só existem nesse ambiente. Apesar de sua riqueza natural, sofre com o desmatamento e a fragmentação de seus habitats.</p>
+                    <p>A Mata Atlântica é um dos biomas mais ricos em biodiversidade do planeta, apresentando florestas densas, rios, cachoeiras e diferentes formações vegetais. Estende-se por grande parte do litoral brasileiro e abriga inúmeras espécies de animais e plantas. Apesar de sua riqueza natural, sofre com o desmatamento e a fragmentação de seus habitats.</p>
                 </div>
                 </div>
 
@@ -77,7 +82,7 @@
                 <img class="frente" src="../cartas-interativas/frente-carta-pampa.png" alt="Carta do Pampa">
                 <img class="verso" src="../cartas-interativas/carta-verso-pampa.png" alt="">
                 <div class="info">
-                    <p>Localizado no extremo sul do Brasil, o Pampa é caracterizado por extensos campos naturais, vegetação rasteira e grandes áreas abertas. Suas paisagens são formadas principalmente por gramíneas e pequenas plantas, que servem de abrigo e alimento para diversas espécies. O bioma possui grande importância ecológica e cultural, mas enfrenta ameaças como a expansão agrícola e a substituição dos campos naturais.</p>
+                    <p>Localizado no extremo sul do Brasil, o Pampa é caracterizado por extensos campos naturais, vegetação rasteira e grandes áreas abertas. O bioma possui grande importância ecológica e cultural, mas enfrenta ameaças como a expansão agrícola e a substituição dos campos naturais.</p>
                 </div>
                 </div>
 
@@ -95,31 +100,41 @@
         </section>
         <section id="objetivo"> <!--seção dos objetivos do jogo - Missão do Explorador-->
             <h2> Missão do Explorador </h2>
-            <p>
-                Sua missão é percorrer os seis biomas brasileiros, conhecer suas espécies e superar os desafios que encontrar pelo caminho.
-            </p>
-            <p>
-                Para conquistar o broche de cada bioma, você deverá reunir cartas que representem sua fauna. Para isso, colete uma carta de cada animal exigido ou utilize cartas de contratempo, que podem substituir cartas de animais e ajudar a completar sua coleção.
-            </p>
-            <ul>
-                <li> <b>Amazônia:</b> 3 animais diferentes; </li>
-                <li> <b>Caatinga:</b> 3 animais diferentes; </li>
-                <li> <b>Cerrado:</b> 3 animais diferentes; </li>
-                <li> <b>Mata Atlântica:</b> 3 animais diferentes; </li>
-                <li> <b>Pantanal:</b> 3 animais diferentes; </li>
-                <li> <b>Pampa:</b> 2 animais diferentes; </li>
-            </ul>
-            <p>
-                Ao completar sua coleção e conquistar os seis broches de exploração, você estará pronto para receber o título de <b>Grande Explorador</b> e vencerá o jogo.
-            </p>
-            <p>
-                <b>Mas atenção:</b> observe as respostas dos outros jogadores. As informações compartilhadas durante a expedição podem ser valiosas para os próximos desafios!
-            </p>
+            <div class="missao-conteudo"> <!--imagem da escoteira à esquerda e texto à direita-->
+                <img class="escoteira" src="../imagens/escoteira-sem-fundo.png" alt="Escoteira exploradora do Missão Fauna">
+                <div class="missao-texto">
+                    <p>
+                        Sua missão é percorrer os seis biomas brasileiros, conhecer suas espécies e superar os desafios que encontrar pelo caminho.
+                    </p>
+                    <p>
+                        Para conquistar o broche de cada bioma, você deverá reunir cartas que representem sua fauna. Para isso, colete uma carta de cada animal exigido ou utilize cartas de contratempo, que podem substituir cartas de animais e ajudar a completar sua coleção.
+                    </p>
+                    <ul>
+                        <li> <b>Amazônia:</b> 3 animais diferentes; </li>
+                        <li> <b>Caatinga:</b> 3 animais diferentes; </li>
+                        <li> <b>Cerrado:</b> 3 animais diferentes; </li>
+                        <li> <b>Mata Atlântica:</b> 3 animais diferentes; </li>
+                        <li> <b>Pantanal:</b> 3 animais diferentes; </li>
+                        <li> <b>Pampa:</b> 2 animais diferentes; </li>
+                    </ul>
+                    <p>
+                        Ao completar sua coleção e conquistar os seis broches de exploração, você estará pronto para receber o título de <b>Grande Explorador</b> e vencerá o jogo.
+                    </p>
+                    <p>
+                        <b>Mas atenção:</b> observe as respostas dos outros jogadores. As informações compartilhadas durante a expedição podem ser valiosas para os próximos desafios!
+                    </p>
+                </div>
+            </div>
         </section>
         <section id="componentes"> <!--seção dos componentes do jogo - kit explorador-->
-
+            <h2> Kit Explorador </h2>
         </section>
     </main>
+    <button class="voltar-topo" type="button" aria-label="Voltar ao início da página"> <!--botão de voltar ao topo-->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <footer> <!--rodapé do site - contatos-->
         <img src="../imagens/logo-missao-fauna.png">
         <p>
