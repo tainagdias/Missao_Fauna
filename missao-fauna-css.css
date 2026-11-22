@@ -708,3 +708,155 @@ main section[id] {
         width: 100%;
     }
 }
+
+/*LAYOUT DOS ANIMAIS*/
+
+/* SEÇÕES DOS BIOMAS */
+
+.secao-bioma {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.titulo-bioma {
+    font-size: 28px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* PERFIL DO ANIMAL */
+
+.perfil {
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 35px;
+}
+
+/* IMAGENS */
+
+.imagem-animal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imagem-animal img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+/* INFORMAÇÕES */
+
+.animal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cabecalho-2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cabecalho-2 h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.cabecalho-2 span {
+    font-size: 18px;
+    font-style: italic;
+    color: #777;
+}
+
+/* CONSERVAÇÃO */
+
+.status-conservacao {
+    font-weight: 600;
+}
+
+.vulneravel {
+    color: #e69b24;
+}
+
+.em-perigo {
+    color: #e04444;
+}
+
+.criticamente-perigo {
+    color: #a51616;
+}
+
+.pouco-preocupante {
+    color: #3b9b63;
+}
+
+/* DADOS DO ANIMAL */
+
+.detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.detalhes p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* SOBRE A ESPÉCIE */
+
+.descricao {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.descricao h4 {
+    font-size: 19px;
+    margin: 0 0 9px;
+}
+
+.descricao p {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: justify;
+    margin: 0;
+}
+
+/* INSTITUIÇÃO */
+
+.instituicao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.instituicao img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.instituicao h5 {
+    font-size: 15px;
+    margin: 0 0 4px;
+}
+
+.instituicao a {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+}
+
+.instituicao a:hover {
+    text-decoration: underline;
+}
