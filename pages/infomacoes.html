@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Missão Fauna Informações </title>
     <link rel="stylesheet" href="../missao-fauna-css.css">
+    <script src="../script.js" defer></script>
 </head>
 <body>
     <header> <!--cabeçalho do site-->
@@ -25,7 +26,99 @@
         </div>
     </header>
     <main>
+         <nav aria-label="menu das Informações do Jogo"> <!--submenu-->
+            <a href="#historia"> História do Jogo </a>
+            <a href="#objetivo"> Objetivo do Jogo </a>
+            <a href="componentes"> Componentes </a>
+        </nav>
+        <section id="historia"> <!--seção de história do Jogo - Diário de Campo -->
+            <h2> Diário de Campo </h2>
+            <h4> Registro de expedição — Missão Fauna </h4>
+            <p>
+                Ao longo de minhas expedições pelo Brasil, percorri diferentes paisagens, atravessei os seis biomas brasileiros e descobri espécies que tornam cada região única. Entre trilhas, desafios e descobertas, aprendi que explorar vai muito além de encontrar animais: é conhecer seus habitats, compreender a natureza e reconhecer a riqueza da nossa biodiversidade.
+            </p>
+            <p>
+               Reuni neste diário algumas experiências, informações e aprendizados de minhas viagens, que poderão ajudar aqueles que estão prestes a iniciar sua própria jornada. Cada bioma guarda descobertas, e todo explorador precisa estar preparado para o que encontrará pelo caminho. 
+            </p>
+            <section class="biomas">
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-amazonia.png" alt="Carta da Amazônia">
+                <img class="verso" src="../cartas-interativas/carta-verso-amazonia.png" alt="">
+                <div class="info">
+                    <p>O maior bioma brasileiro abriga a maior floresta tropical do mundo, sendo conhecido por sua enorme biodiversidade. Sua vegetação densa, rios extensos e clima úmido formam um ambiente essencial para milhares de espécies de animais e plantas, muitas delas encontradas somente nessa região.</p>
+                </div>
+                </div>
 
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-caatinga.png" alt="Carta da Caatinga">
+                <img class="verso" src="../cartas-interativas/carta-verso-caatinga.png" alt="">
+                <div class="info">
+                    <p>Único bioma exclusivamente brasileiro, a Caatinga é marcada pelo clima semiárido, com altas temperaturas e longos períodos de estiagem. Sua vegetação possui adaptações para sobreviver à falta de água, como cactos e arbustos que perdem suas folhas durante a seca. Mesmo diante dessas condições, abriga uma grande variedade de espécies.</p>
+                </div>
+                </div>
+
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-cerrado.png" alt="Carta do Cerrado">
+                <img class="verso" src="../cartas-interativas/carta-verso-cerrado.png" alt="">
+                <div class="info">
+                    <p>Conhecido como a savana brasileira, o Cerrado apresenta paisagens variadas, com campos abertos, árvores de troncos retorcidos e raízes profundas. Seu clima possui períodos bem definidos de chuva e seca, e sua vegetação abriga uma grande diversidade de animais, além de contribuir para o abastecimento de importantes bacias hidrográficas.</p>
+                </div>
+                </div>
+
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-mata.png" alt="Carta da Mata Atlântica">
+                <img class="verso" src="../cartas-interativas/carta-verso-mata.png" alt="">
+                <div class="info">
+                    <p>A Mata Atlântica é um dos biomas mais ricos em biodiversidade do planeta, apresentando florestas densas, rios, cachoeiras e diferentes formações vegetais. Estende-se por grande parte do litoral brasileiro e abriga inúmeras espécies de animais e plantas, incluindo algumas que só existem nesse ambiente. Apesar de sua riqueza natural, sofre com o desmatamento e a fragmentação de seus habitats.</p>
+                </div>
+                </div>
+
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-pampa.png" alt="Carta do Pampa">
+                <img class="verso" src="../cartas-interativas/carta-verso-pampa.png" alt="">
+                <div class="info">
+                    <p>Localizado no extremo sul do Brasil, o Pampa é caracterizado por extensos campos naturais, vegetação rasteira e grandes áreas abertas. Suas paisagens são formadas principalmente por gramíneas e pequenas plantas, que servem de abrigo e alimento para diversas espécies. O bioma possui grande importância ecológica e cultural, mas enfrenta ameaças como a expansão agrícola e a substituição dos campos naturais.</p>
+                </div>
+                </div>
+
+                <div class="card" tabindex="0" role="button" aria-expanded="false">
+                <img class="frente" src="../cartas-interativas/frente-carta-pantanal.png" alt="Carta do Pantanal">
+                <img class="verso" src="../cartas-interativas/carta-verso-pantanal.png" alt="">
+                <div class="info">
+                    <p>O Pantanal é uma das maiores planícies alagáveis do mundo, conhecido pelo ciclo de cheias e secas que transforma sua paisagem ao longo do ano. Durante as inundações, rios e áreas alagadas favorecem a vida de diversas espécies, tornando o bioma um importante refúgio para animais como a onça-pintada, a arara-azul e o tuiuiú.</p>
+                </div>
+                </div>
+            </section>
+            <p>
+                Agora é sua vez de partir. Leve consigo tudo o que aprendeu até aqui, esteja atento aos desafios e prepare-se para conquistar seus próprios broches de exploração. O Brasil ainda tem muito a revelar, e sua expedição está apenas começando.
+            </p>
+        </section>
+        <section id="objetivo"> <!--seção dos objetivos do jogo - Missão do Explorador-->
+            <h2> Missão do Explorador </h2>
+            <p>
+                Sua missão é percorrer os seis biomas brasileiros, conhecer suas espécies e superar os desafios que encontrar pelo caminho.
+            </p>
+            <p>
+                Para conquistar o broche de cada bioma, você deverá reunir cartas que representem sua fauna. Para isso, colete uma carta de cada animal exigido ou utilize cartas de contratempo, que podem substituir cartas de animais e ajudar a completar sua coleção.
+            </p>
+            <ul>
+                <li> <b>Amazônia:</b> 3 animais diferentes; </li>
+                <li> <b>Caatinga:</b> 3 animais diferentes; </li>
+                <li> <b>Cerrado:</b> 3 animais diferentes; </li>
+                <li> <b>Mata Atlântica:</b> 3 animais diferentes; </li>
+                <li> <b>Pantanal:</b> 3 animais diferentes; </li>
+                <li> <b>Pampa:</b> 2 animais diferentes; </li>
+            </ul>
+            <p>
+                Ao completar sua coleção e conquistar os seis broches de exploração, você estará pronto para receber o título de <b>Grande Explorador</b> e vencerá o jogo.
+            </p>
+            <p>
+                <b>Mas atenção:</b> observe as respostas dos outros jogadores. As informações compartilhadas durante a expedição podem ser valiosas para os próximos desafios!
+            </p>
+        </section>
+        <section id="componentes"> <!--seção dos componentes do jogo - kit explorador-->
+
+        </section>
     </main>
     <footer> <!--rodapé do site - contatos-->
         <img src="../imagens/logo-missao-fauna.png">
