@@ -289,3 +289,47 @@ footer p {
     font-size: 1.6rem;
   }
 }
+
+/* CARÔMETRO (EQUIPE) */
+.carometro {
+  width: 90%;
+  max-width: 1000px; /* mesma largura da grade de biomas dentro do diário */
+  margin: 40px auto 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centraliza a carta que sobra na última linha */
+  gap: 25px;
+}
+
+/* Cada carta: mesmo formato e cantos das cards dos biomas */
+.carometro > div {
+  width: calc((100% - 50px) / 3); /* 3 por linha, descontando os 2 espaços de 25px */
+  aspect-ratio: 10 / 7.5;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carometro img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tablets: 2 por linha */
+@media (max-width: 900px) {
+  .carometro > div {
+    width: calc((100% - 25px) / 2);
+  }
+}
+
+/* Celulares: 1 por linha */
+@media (max-width: 600px) {
+  .carometro {
+    width: 94%;
+  }
+
+  .carometro > div {
+    width: 100%;
+  }
+}
