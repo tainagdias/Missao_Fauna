@@ -1,7 +1,29 @@
+/* =========================================================
+   MISSÃO FAUNA - FOLHA DE ESTILO
+   ---------------------------------------------------------
+   Índice:
+     1. Reset e variáveis de cor
+     2. Base (body)
+     3. Cabeçalho (logo + menu)
+     4. Menu burger (botão do celular)
+     5. Página inicial (banner + apresentação)
+     6. Rodapé
+     7. Submenu da página Informações
+        + Diário de campo (seções História e Objetivo)
+     8. Cards dos biomas
+     9. Carômetro (página Equipe)
+    10. Botão de voltar ao topo
+    11. Responsividade (telas médias, tablets e celulares)
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET E VARIÁVEIS DE COR
+   ========================================================= */
 * {
     margin: 0; /* Remove as margens padrão dos elementos */
     padding: 0; /* Remove os espaçamentos internos padrão */
-    box-sizing: border-box; /* Faz o padding e a borda serem considerados dentro da largura definida */
+    box-sizing: border-box; /* Padding e borda ficam dentro da largura definida */
 }
 
 :root {
@@ -9,10 +31,19 @@
     --verdeapagado: #7bad88;
     --creme: #fff3d9;
     --marrom: #29170b;
-    
+    --amarelo: #f5c542; /* Contorno de foco (navegação por teclado) */
 }
+
+/* Imagens nunca ultrapassam a largura da tela */
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
 body {
-    margin: 0; /* Remove a margem padrão do navegador */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Fonte */
     color: var(--creme); /* Cor dos textos */
@@ -23,10 +54,14 @@ body {
 }
 
 
-/* CABEÇALHO */
+/* =========================================================
+   3. CABEÇALHO
+   ========================================================= */
 header {
     background-color: var(--verdeapagado); /* Fundo do cabeçalho */
     width: 100%; /* Ocupa toda a largura */
+    position: relative; /* Referência para o menu suspenso do celular */
+    z-index: 10; /* Menu aberto fica por cima do conteúdo */
 }
 
 header > .cabecalho {
@@ -37,13 +72,14 @@ header > .cabecalho {
     min-height: 135px; /* Altura do cabeçalho */
 }
 
-/* LOGO */
+/* --- Logo --- */
 header img {
+    display: block; /* Evita espaço extra embaixo da imagem */
     width: 150px; /* Largura da logo */
     height: auto; /* Mantém proporção */
 }
 
-/* MENU */
+/* --- Menu de navegação --- */
 header ul {
     list-style-type: none; /* Retira as bolinhas */
 }
@@ -64,10 +100,62 @@ header a:hover {
     color: var(--creme); /* Cor ao passar o mouse */
 }
 
-/* IMAGEM DO JOGO */
+
+/* =========================================================
+   4. MENU BURGER (só aparece no celular/tablet - ver seção 10)
+   ========================================================= */
+.menu-burger {
+    display: none; /* Escondido no computador */
+    flex-direction: column; /* Três tracinhos empilhados */
+    justify-content: center;
+    gap: 6px; /* Espaço entre os tracinhos */
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Tira o flash ao tocar */
+}
+
+/* Cada tracinho do burger */
+.menu-burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--verdeescuro);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-burger:focus-visible {
+    outline: 3px solid var(--amarelo);
+    outline-offset: 2px;
+}
+
+/* Animação: os tracinhos viram um "X" quando o menu está aberto */
+.menu-burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   5. PÁGINA INICIAL
+   ========================================================= */
+
+/* --- Banner (imagem do jogo) --- */
 .imagem-jogo {
-    width: 50%; /* Largura da área */
-    margin: 10px auto; /* Centraliza horizontalmente */
+    width: 85%; /* Largura da área do banner */
+    max-width: 1400px; /* Limite em telas muito grandes */
+    margin: 20px auto; /* Centraliza horizontalmente */
     text-align: center; /* Centraliza o conteúdo */
 }
 
@@ -78,21 +166,24 @@ header a:hover {
     margin: 0 auto; /* Centraliza a imagem */
 }
 
-/* TEXTO DE APRESENTAÇÃO */
+/* --- Texto de apresentação --- */
 .apresentacao {
     color: var(--creme); /* Cor do texto */
     text-align: center; /* Texto centralizado */
+    padding: 0 16px; /* Respiro nas laterais em telas pequenas */
 }
 
 .apresentacao p {
     font-size: 16px; /* Tamanho do texto */
     line-height: 1.8; /* Espaçamento entre linhas */
-    margin-bottom: 20px; /* Espaço entre parágrafos */
-    margin: 20px auto 20px; /* Centraliza o parágrafo */
-    width: 1000px; /* Comprimento do texto */
+    margin: 20px auto; /* Centraliza o parágrafo */
+    max-width: 1000px; /* Comprimento máximo do texto */
 }
 
-/* RODAPÉ */
+
+/* =========================================================
+   6. RODAPÉ
+   ========================================================= */
 footer {
     background-color: var(--verdeapagado); /* Fundo verde */
     color: var(--verdeescuro); /* Cor do texto */
@@ -100,6 +191,7 @@ footer {
     display: flex; /* Logo e informações lado a lado */
     align-items: center; /* Alinha verticalmente */
     justify-content: space-between; /* Distribui elementos */
+    gap: 16px; /* Espaço entre logo e texto */
     margin-top: auto; /* Empurra o rodapé para o final da página */
 }
 
@@ -113,223 +205,469 @@ footer p {
     text-align: center; /* Centraliza informações */
 }
 
-/* CARDS BIOMAS */
+
+/* =========================================================
+   7. SUBMENU DA PÁGINA INFORMAÇÕES
+   ========================================================= */
+
+/* Rolagem suave ao clicar nos links do submenu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Barra do submenu: fica grudada no topo ao rolar a página */
+.submenu {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--verdeescuro);
+    border-bottom: 1px solid rgba(123, 173, 136, 0.3); /* Linha sutil embaixo */
+}
+
+/* Cada botão do submenu */
+.submenu a {
+    display: flex;
+    flex-direction: column; /* Título em cima, subtítulo embaixo */
+    align-items: center;
+    text-align: center;
+    padding: 10px 24px;
+    border: 2px solid var(--verdeapagado);
+    border-radius: 999px; /* Formato de pílula */
+    color: var(--creme);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap; /* Não quebra o texto do botão */
+    transition: background-color 0.25s ease, color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtítulo (ex.: "Diário de Campo") */
+.submenu small {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Botão ao passar o mouse ou da seção que está na tela */
+.submenu a:hover,
+.submenu a.ativo {
+    background-color: var(--verdeapagado);
+    color: var(--verdeescuro);
+}
+
+.submenu a:focus-visible {
+    outline: 3px solid var(--amarelo);
+    outline-offset: 3px;
+}
+
+/* Ao pular para uma seção, o título não fica escondido atrás do submenu */
+main section[id] {
+    scroll-margin-top: 110px;
+}
+
+
+/* =========================================================
+   7.1 DIÁRIO DE CAMPO (HISTÓRIA E OBJETIVO)
+   ========================================================= */
+#historia,
+#objetivo {
+    background-color: var(--creme);
+    color: var(--marrom);
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); /* Sombra de papel sobre a mesa */
+}
+
+/* --- Títulos --- */
+#historia > h2,
+#objetivo > h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+#historia > h4 {
+    font-style: italic;
+    font-weight: normal;
+    opacity: 0.8;
+    margin-bottom: 24px;
+}
+
+/* --- Parágrafos e lista (só os diretos da seção, para não afetar os cards) --- */
+#historia > p,
+#objetivo > p {
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+#objetivo > ul {
+    padding-left: 24px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* --- Cards dentro da página do diário --- */
+#historia .biomas {
+    width: 100%;
+    margin: 32px auto 0;
+}
+
+
+/* =========================================================
+   8. CARDS DOS BIOMAS
+   ========================================================= */
 .biomas {
-  width: 90%;
-  max-width: 1100px;
-  margin: 40px auto 80px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no computador */
+    gap: 25px;
 }
 
 .card {
-  position: relative;
-  aspect-ratio: 10 / 7.5;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent; /* tira o flash colorido ao tocar no celular */
+    position: relative;
+    aspect-ratio: 10 / 7.5;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Tira o flash colorido ao tocar no celular */
 }
 
 /* Contorno visível só ao navegar pelo teclado */
 .card:focus {
-  outline: none;
+    outline: none;
 }
 
 .card:focus-visible {
-  outline: 3px solid #f5c542;
-  outline-offset: 3px;
+    outline: 3px solid var(--amarelo);
+    outline-offset: 3px;
 }
 
 /* As duas imagens ficam empilhadas, ocupando o card inteiro */
 .card img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Antes do clique aparece a frente.
    No clique, o verso aparece por cima com fade.
    A frente não some, então não há clarão no meio da troca. */
 .card .verso {
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .card.ativo .verso {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* Texto por cima das duas imagens */
+/* --- Texto por cima das duas imagens --- */
 .info {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  overflow-y: auto;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
 .card.ativo .info {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Centraliza o texto na vertical sem cortar o topo quando ele é longo */
 .info > :first-child {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 .info > :last-child {
-  margin-bottom: auto;
+    margin-bottom: auto;
 }
 
 .info h2 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
+    margin: 0 0 10px;
+    font-size: 1.4rem;
 }
 
 .info p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
-/* Tablets: 2 colunas */
-@media (max-width: 900px) {
-  .biomas {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-/* Celulares: 1 coluna e um pouco menos de espaço interno */
-@media (max-width: 600px) {
-  .biomas {
-    grid-template-columns: 1fr;
-  }
-
-  .info {
-    padding: 14px;
-  }
-
-  .info h2 {
-    font-size: 1.2rem;
-  }
-}
-
-/* DIÁRIO DE CAMPO (HISTÓRIA E OBJETIVO) */
-
-#historia,
-#objetivo {
-  background-color: var(--creme);
-  color: var(--marrom);
-  width: 90%;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 40px 50px;
-  border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); /* sombra de papel sobre a mesa */
-}
-
-/* Títulos */
-#historia > h2,
-#objetivo > h2 {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-#historia > h4 {
-  font-style: italic;
-  font-weight: normal;
-  opacity: 0.8;
-  margin-bottom: 24px;
-}
-
-/* Parágrafos e lista (só os diretos da seção, para não afetar os cards) */
-#historia > p,
-#objetivo > p {
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-
-#objetivo > ul {
-  padding-left: 24px;
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-
-/* Cards dentro da página do diário */
-#historia .biomas {
-  width: 100%;
-  margin: 32px auto 0;
-}
-
-/* Celular: menos espaço interno */
-@media (max-width: 600px) {
-  #historia,
-  #objetivo {
-    width: 94%;
-    padding: 24px 20px;
-  }
-
-  #historia > h2,
-  #objetivo > h2 {
-    font-size: 1.6rem;
-  }
-}
-
-/* CARÔMETRO (EQUIPE) */
+/* =========================================================
+   9. CARÔMETRO (EQUIPE)
+   ========================================================= */
 .carometro {
-  width: 90%;
-  max-width: 1000px; /* mesma largura da grade de biomas dentro do diário */
-  margin: 40px auto 80px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centraliza a carta que sobra na última linha */
-  gap: 25px;
+    width: 90%;
+    max-width: 1000px; /* Mesma largura da grade de biomas dentro do diário */
+    margin: 40px auto 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza a carta que sobra na última linha */
+    gap: 25px;
 }
 
-/* Cada carta: mesmo formato e cantos das cards dos biomas */
+/* Cada carta: mesmo formato e cantos dos cards dos biomas */
 .carometro > div {
-  width: calc((100% - 50px) / 3); /* 3 por linha, descontando os 2 espaços de 25px */
-  aspect-ratio: 10 / 7.5;
-  overflow: hidden;
-  border-radius: 12px;
+    width: calc((100% - 50px) / 3); /* 3 por linha, descontando os 2 espaços de 25px */
+    aspect-ratio: 10 / 7.5;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .carometro img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Tablets: 2 por linha */
-@media (max-width: 900px) {
-  .carometro > div {
-    width: calc((100% - 25px) / 2);
-  }
-}
-
-/* Celulares: 1 por linha */
-@media (max-width: 600px) {
-  .carometro {
-    width: 94%;
-  }
-
-  .carometro > div {
+    display: block;
     width: 100%;
-  }
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   10. BOTÃO DE VOLTAR AO TOPO
+   ========================================================= */
+.voltar-topo {
+    position: fixed; /* Fica parado no canto da tela */
+    right: 24px;
+    bottom: 24px;
+    z-index: 20; /* Fica por cima de todo o conteúdo */
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verdeapagado);
+    color: var(--verdeescuro); /* Cor da seta */
+    border: 2px solid var(--verdeescuro);
+    border-radius: 10px; /* Quadradinho com cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    /* Escondido até a pessoa rolar a página para baixo */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s,
+                background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Aparece quando a página foi rolada (classe colocada pelo script.js) */
+.voltar-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.voltar-topo:hover {
+    background-color: var(--creme);
+}
+
+.voltar-topo:focus-visible {
+    outline: 3px solid var(--amarelo);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   11. RESPONSIVIDADE
+   ========================================================= */
+
+/* ---------- Telas médias (notebooks pequenos): até 1200px ---------- */
+@media (max-width: 1200px) {
+    /* Menu um pouco menor para caber numa linha só */
+    header li {
+        margin-right: 24px;
+    }
+
+    header a {
+        font-size: 22px;
+    }
+}
+
+/* ---------- Tablets: até 900px ---------- */
+@media (max-width: 900px) {
+
+    /* --- Cabeçalho mais baixo --- */
+    header > .cabecalho {
+        min-height: 90px;
+        padding: 6px 16px;
+    }
+
+    header img {
+        width: 100px;
+    }
+
+    /* --- Mostra o botão burger --- */
+    .menu-burger {
+        display: flex;
+    }
+
+    /* --- Menu vira uma lista suspensa embaixo do cabeçalho --- */
+    .menu {
+        position: absolute;
+        top: 100%; /* Logo abaixo do cabeçalho */
+        left: 0;
+        right: 0;
+        background-color: var(--verdeapagado);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        display: none; /* Fechado por padrão */
+    }
+
+    .menu.aberto {
+        display: block; /* Aberto ao clicar no burger */
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column; /* Um link embaixo do outro */
+        padding: 8px 0;
+    }
+
+    header .menu li {
+        display: block;
+        margin: 0;
+        border-top: 1px solid rgba(24, 41, 35, 0.2); /* Linha separando os links */
+    }
+
+    header .menu a {
+        display: block; /* Área de toque ocupa a linha inteira */
+        padding: 14px 20px;
+        font-size: 20px;
+    }
+
+    /* --- Banner ocupa quase toda a largura --- */
+    .imagem-jogo {
+        width: 94%;
+    }
+
+    /* --- Biomas e carômetro: 2 por linha --- */
+    .biomas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carometro > div {
+        width: calc((100% - 25px) / 2);
+    }
+}
+
+/* ---------- Celulares: até 600px ---------- */
+@media (max-width: 600px) {
+
+    /* --- Submenu: os 3 botões dividem a largura em partes iguais --- */
+    .submenu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais, todos visíveis */
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .submenu a {
+        justify-content: center; /* Centraliza o texto na vertical */
+        padding: 8px 6px;
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: normal; /* Deixa o texto quebrar em 2 linhas */
+        border-radius: 14px; /* Pílula vira um retângulo arredondado */
+    }
+
+    .submenu small {
+        display: none; /* No celular mostra só o título, mais compacto */
+    }
+
+    main section[id] {
+        scroll-margin-top: 70px;
+    }
+
+    /* --- Banner de ponta a ponta --- */
+    .imagem-jogo {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    /* --- Texto de apresentação --- */
+    .apresentacao p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* --- Botão de voltar ao topo mais perto do canto --- */
+    .voltar-topo {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+
+    /* --- Rodapé empilhado --- */
+    footer {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    footer img {
+        width: 80px;
+    }
+
+    footer p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* --- Diário de campo com menos espaço interno --- */
+    #historia,
+    #objetivo {
+        width: 94%;
+        padding: 24px 20px;
+    }
+
+    #historia > h2,
+    #objetivo > h2 {
+        font-size: 1.6rem;
+    }
+
+    /* --- Biomas: 1 coluna --- */
+    .biomas {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        padding: 14px;
+    }
+
+    .info h2 {
+        font-size: 1.2rem;
+    }
+
+    /* --- Carômetro: 1 por linha --- */
+    .carometro {
+        width: 94%;
+    }
+
+    .carometro > div {
+        width: 100%;
+    }
 }

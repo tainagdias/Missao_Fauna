@@ -15,7 +15,12 @@
                     <img src="../imagens/logo-missao-fauna.png">
                 </a>
             </div>
-            <nav class="menu"> <!--menu de navegação-->
+            <button class="menu-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"> <!--botão do menu no celular-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal"> <!--menu de navegação-->
                 <ul>
                     <li> <a href="../index.html"> Home </a> </li>
                     <li> <a href="infomacoes.html"> Sobre </a> </li>
@@ -26,10 +31,10 @@
         </div>
     </header>
     <main>
-         <nav aria-label="menu das Informações do Jogo"> <!--submenu-->
-            <a href="#historia"> História do Jogo - Diário de Campo </a>
-            <a href="#objetivo"> Objetivo do Jogo - Missão do Explorador </a>
-            <a href="componentes"> Componentes - Kit Explorador </a>
+        <nav class="submenu" aria-label="menu das Informações do Jogo"> <!--submenu-->
+            <a href="#historia"> História do Jogo <small>Diário de Campo</small> </a>
+            <a href="#objetivo"> Objetivo do Jogo <small>Missão do Explorador</small> </a>
+            <a href="#componentes"> Componentes <small>Kit Explorador</small> </a>
         </nav>
         <section id="historia"> <!--seção de história do Jogo - Diário de Campo -->
             <h2> Diário de Campo </h2>
@@ -120,6 +125,11 @@
             <h2> Kit Explorador </h2>
         </section>
     </main>
+    <button class="voltar-topo" type="button" aria-label="Voltar ao início da página"> <!--botão de voltar ao topo-->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <footer> <!--rodapé do site - contatos-->
         <img src="../imagens/logo-missao-fauna.png">
         <p>
