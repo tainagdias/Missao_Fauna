@@ -293,24 +293,48 @@ main section[id] {
     margin-bottom: 8px;
 }
 
+/* Subtítulo "Registro de expedição": mesmo visual dos parágrafos */
 #historia > h4 {
-    font-style: italic;
-    font-weight: normal;
-    opacity: 0.8;
-    margin-bottom: 24px;
+    font-size: 1.2rem; /* Um pouco maior que o texto (que tem 1rem = 16px) */
+    font-weight: normal; /* Sem negrito */
+    line-height: 1.8; /* Mesmo espaçamento entre linhas */
+    margin-bottom: 16px; /* Mesmo espaço dos parágrafos */
 }
 
 /* --- Parágrafos e lista (só os diretos da seção, para não afetar os cards) --- */
 #historia > p,
-#objetivo > p {
+#objetivo .missao-texto > p {
     line-height: 1.8;
     margin-bottom: 16px;
 }
 
-#objetivo > ul {
+#objetivo .missao-texto > ul {
     padding-left: 24px;
     line-height: 1.8;
     margin-bottom: 16px;
+}
+
+/* --- Missão do Explorador: o texto "envolve" a imagem da escoteira --- */
+.missao-conteudo {
+    display: flow-root; /* Mantém a imagem flutuante dentro da seção */
+    margin-top: 16px;
+}
+
+.escoteira {
+    float: left; /* Imagem à esquerda; o texto contorna pela direita e por baixo */
+    width: 320px; /* Tamanho da imagem no computador */
+    height: auto; /* Mantém a proporção */
+    margin: 0 28px 12px 0; /* Espaço entre a imagem e o texto (direita e embaixo) */
+}
+
+/* A lista fica inteira ao lado da imagem, sem as bolinhas ficarem por cima dela */
+#objetivo .missao-texto > ul {
+    display: flow-root;
+}
+
+/* Tira o espaço sobrando embaixo do último parágrafo */
+.missao-texto > :last-child {
+    margin-bottom: 0;
 }
 
 /* --- Cards dentro da página do diário --- */
@@ -564,6 +588,11 @@ main section[id] {
         width: 94%;
     }
 
+    /* --- Missão do Explorador: imagem menor --- */
+    .escoteira {
+        width: 220px;
+    }
+
     /* --- Biomas e carômetro: 2 por linha --- */
     .biomas {
         grid-template-columns: repeat(2, 1fr);
@@ -647,6 +676,14 @@ main section[id] {
     #historia > h2,
     #objetivo > h2 {
         font-size: 1.6rem;
+    }
+
+    /* --- Missão do Explorador: imagem centralizada em cima, texto embaixo --- */
+    .escoteira {
+        float: none; /* Para de flutuar: tela estreita demais para o texto ao lado */
+        display: block;
+        width: 200px;
+        margin: 0 auto 16px; /* Centraliza a imagem */
     }
 
     /* --- Biomas: 1 coluna --- */
