@@ -870,6 +870,7 @@ main section[id] {
 
 .detalhes p {
     font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
 }
@@ -888,6 +889,7 @@ main section[id] {
 
 .descricao p {
     font-size: 19px;
+    font-size: 15px;
     line-height: 1.7;
     text-align: justify;
     margin: 0;
@@ -904,20 +906,25 @@ main section[id] {
 .instituicao img {
     width: 75px;
     height: 75px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
 .instituicao h5 {
     font-size: 16px;
+    font-size: 15px;
     margin: 0 0 4px;
 }
 
 .instituicao a {
     font-size: 14px;
+    font-size: 13px;
     color: #666;
     text-decoration: none;
 }
 
 .instituicao a:hover {
     text-decoration: underline;
+}
 }
