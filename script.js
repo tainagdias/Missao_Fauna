@@ -62,11 +62,24 @@ if (linksSubmenu.length) {
 const botaoTopo = document.querySelector('.voltar-topo');
 
 if (botaoTopo) {
+  const rodape = document.querySelector('footer');
+
   const atualizarBotaoTopo = () => {
     botaoTopo.classList.toggle('visivel', window.scrollY > 300);
+
+    // Quando o rodapé aparece na tela, o botão sobe para ficar acima dele
+    botaoTopo.style.bottom = '';
+    if (rodape) {
+      const margem = parseFloat(getComputedStyle(botaoTopo).bottom);
+      const rodapeVisivel = window.innerHeight - rodape.getBoundingClientRect().top;
+      if (rodapeVisivel > 0) {
+        botaoTopo.style.bottom = (rodapeVisivel + margem) + 'px';
+      }
+    }
   };
 
   window.addEventListener('scroll', atualizarBotaoTopo, { passive: true });
+  window.addEventListener('resize', atualizarBotaoTopo);
   atualizarBotaoTopo();
 
   botaoTopo.addEventListener('click', () => {

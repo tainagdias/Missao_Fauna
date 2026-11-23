@@ -337,10 +337,25 @@ main section[id] {
     margin-bottom: 0;
 }
 
+/* --- Kit Explorador: imagem centralizada com cantos arredondados --- */
+#componentes {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+#componentes img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
 /* --- Cards dentro da página do diário --- */
 #historia .biomas {
     width: 100%;
-    margin: 32px auto 0;
+    margin: 32px auto; /* Mesmo espaço em cima e embaixo dos cards */
 }
 
 
@@ -753,7 +768,7 @@ main section[id] {
 /* Cards dentro da página do diário */
 #historia .biomas {
   width: 100%;
-  margin: 32px auto 0;
+  margin: 32px auto; /* Mesmo espaço em cima e embaixo dos cards */
 }
 
 /* Celular: menos espaço interno */
