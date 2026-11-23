@@ -770,7 +770,7 @@ main section[id] {
   }
 }
 
-/*PERFIS DOS ANIMAIS*/
+/*LAYOUT DOS ANIMAIS*/
 
 /* SEÇÕES DOS BIOMAS */
 
@@ -869,7 +869,7 @@ main section[id] {
 }
 
 .detalhes p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     margin: 0;
 }
@@ -887,7 +887,7 @@ main section[id] {
 }
 
 .descricao p {
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.7;
     text-align: justify;
     margin: 0;
@@ -902,18 +902,18 @@ main section[id] {
 }
 
 .instituicao img {
-    width: 42px;
-    height: 42px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
 }
 
 .instituicao h5 {
-    font-size: 15px;
+    font-size: 16px;
     margin: 0 0 4px;
 }
 
 .instituicao a {
-    font-size: 13px;
+    font-size: 14px;
     color: #666;
     text-decoration: none;
 }
