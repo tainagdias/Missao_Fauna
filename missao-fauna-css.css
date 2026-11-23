@@ -838,26 +838,106 @@ main section[id] {
     color: #777;
 }
 
-/* CONSERVAÇÃO */
-
-.status-conservacao {
-    font-weight: 600;
-}
+/* CONSERVAÇÃO
+   Escala com 5 bolinhas ligadas por linhas (do mais ameaçado ao menos).
+   A cor de cada bolinha vem das classes abaixo (via currentColor).
+   A bolinha do estado atual (.atual) fica preenchida e mostra a legenda. */
 
 .vulneravel {
-    color: #e69b24;
+    color: #f5c542;
 }
 
 .em-perigo {
-    color: #e04444;
+    color: #f07c2e;
 }
 
 .criticamente-perigo {
-    color: #a51616;
+    color: #e04444;
+}
+
+.quase-ameacada {
+    color: #b5d334;
 }
 
 .pouco-preocupante {
-    color: #3b9b63;
+    color: #3fb56b;
+}
+
+.conservacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.escala-conservacao {
+    --tamanho: 22px; /* Tamanho de cada bolinha */
+    --espaco: 34px; /* Comprimento da linha entre as bolinhas */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--espaco);
+    padding: 4px 0 28px; /* Espaço embaixo para a legenda */
+}
+
+/* Bolinha vazia (só o contorno) */
+.escala-conservacao li {
+    position: relative;
+    flex-shrink: 0;
+    width: var(--tamanho);
+    height: var(--tamanho);
+    border: 3px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.55;
+}
+
+/* Linha que liga uma bolinha à anterior */
+.escala-conservacao li + li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 3px); /* Começa logo depois do contorno */
+    width: var(--espaco);
+    height: 3px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 243, 217, 0.35); /* Creme transparente */
+    border-radius: 2px;
+}
+
+/* Bolinha do estado atual: preenchida e um pouco maior */
+.escala-conservacao li.atual {
+    background-color: currentColor;
+    opacity: 1;
+    width: calc(var(--tamanho) + 6px);
+    height: calc(var(--tamanho) + 6px);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+/* Legenda: só aparece embaixo da bolinha atual */
+.escala-conservacao span {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.escala-conservacao li.atual span {
+    visibility: visible;
+}
+
+/* Nas pontas, a legenda alinha com a bolinha para não sair da tela */
+.escala-conservacao li:first-child span {
+    left: -3px;
+    transform: none;
+}
+
+.escala-conservacao li:last-child span {
+    left: auto;
+    right: -3px;
+    transform: none;
 }
 
 /* DADOS DO ANIMAL */
@@ -928,3 +1008,61 @@ main section[id] {
     text-decoration: underline;
 }
 
+/* RESPONSIVIDADE DA PÁGINA "AJUDE NOSSOS PERSONAGENS"
+   (fica aqui no fim para valer por cima dos estilos acima) */
+
+/* Tablets: até 900px */
+@media (max-width: 900px) {
+    .perfil {
+        grid-template-columns: 38% 1fr;
+    }
+}
+
+/* Celulares: até 600px */
+@media (max-width: 600px) {
+    .secao-bioma {
+        width: 94%;
+        margin-top: 24px;
+    }
+
+    .titulo-bioma {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    /* Uma coluna só: imagens em cima, informações embaixo */
+    .perfil {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Foto e ilustração lado a lado */
+    .imagem-animal {
+        flex-direction: row;
+    }
+
+    .imagem-animal img {
+        width: calc(50% - 5px);
+    }
+
+    .cabecalho-2 h3 {
+        font-size: 21px;
+    }
+
+    .cabecalho-2 span {
+        font-size: 16px;
+    }
+
+    /* Texto justificado em tela estreita cria buracos entre as palavras */
+    .descricao p {
+        text-align: left;
+    }
+
+    .descricao h4 {
+        font-size: 17px;
+    }
+
+    .escala-conservacao {
+        --espaco: 24px;
+    }
+}

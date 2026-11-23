@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ajude Missão Fauna </title>
     <link rel="stylesheet" href="../missao-fauna-css.css">
+    <script src="../script.js" defer></script>
 </head>
 <body>
     <header> <!--cabeçalho do site-->
@@ -14,10 +15,15 @@
                     <img src="../imagens/logo-missao-fauna.png">
                 </a>
             </div>
-            <nav class="menu"> <!--menu de navegação-->
+            <button class="menu-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"> <!--botão do menu no celular-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal"> <!--menu de navegação-->
                 <ul>
-                    <li> <a href="../index.html"> Página Inicial </a> </li>
-                    <li> <a href="infomacoes.html"> Informações do Jogo </a> </li>
+                    <li> <a href="../index.html"> Home </a> </li>
+                    <li> <a href="infomacoes.html"> Sobre </a> </li>
                     <li> <a href="equipe.html"> Equipe </a> </li>
                     <li> <a href="ajude-nossos-personagens.html"> Ajude Nossos Personagens </a> </li>
                 </ul>
@@ -43,8 +49,16 @@
                         <p><strong>Bioma:</strong> Amazônia</p>
                         <p><strong>Alimentação:</strong> Carnívoro</p>
                         <p><strong>Habitat:</strong> Rios, lagos e áreas alagadas da Amazônia</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao em-perigo">Em perígo</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Em perigo">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo atual" aria-current="true" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -82,8 +96,16 @@
                         <p><strong>Bioma:</strong> Amazônia</p>
                         <p><strong>Alimentação:</strong>Onívora</p>
                         <p><strong>Habitat:</strong>Florestas tropicais próximas a Manaus</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao criticamente-perigo">Criticamente em Perigo</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Criticamente em perigo">
+                                <li class="criticamente-perigo atual" aria-current="true" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -121,8 +143,16 @@
                         <p><strong>Bioma:</strong> Amazônia</p>
                         <p><strong>Alimentação:</strong> Herbívora</p>
                         <p><strong>Habitat:</strong> Rios, lagos e áreas alagadas de água doce</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -167,8 +197,16 @@
                         <p><strong>Bioma:</strong> Caatinga</p>
                         <p><strong>Alimentação:</strong> Herbívora</p>
                         <p><strong>Habitat:</strong> Áreas rochosas, fendas e paredões</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -206,8 +244,16 @@
                         <p><strong>Bioma:</strong> Caatinga</p>
                         <p><strong>Alimentação:</strong> Principalmente sementes de licuri</p>
                         <p><strong>Habitat:</strong> Paredões rochosos e áreas com palmeiras</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -247,8 +293,16 @@
                         <p><strong>Bioma:</strong> Caatinga</p>
                         <p><strong>Alimentação:</strong> Frutos, folhas, insetos e pequenos animais</p>
                         <p><strong>Habitat:</strong> Fragmentos de florestas e matas de galeria</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao criticamente-perigo">Criticamente em Perigo</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Criticamente em perigo">
+                                <li class="criticamente-perigo atual" aria-current="true" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -293,8 +347,16 @@
                         <p><strong>Bioma:</strong> Cerrado</p>
                         <p><strong>Alimentação:</strong> Onívora, com frutos e pequenos animais</p>
                         <p><strong>Habitat:</strong> Campos abertos, cerrados e áreas de vegetaçã</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -334,8 +396,16 @@
                         <p><strong>Bioma:</strong> Cerrado</p>
                         <p><strong>Alimentação:</strong> Onívora, incluindo frutos, sementes, insetos, ovos e pequenos animais.</p>
                         <p><strong>Habitat:</strong> Campos abertos, cerrados, áreas de vegetação rasteira e regiões com árvores espalhadas.</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao pouco-preocupante">Pouco preocupante</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Pouco preocupante">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante atual" aria-current="true" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -365,8 +435,16 @@
                         <p><strong>Bioma:</strong> Cerrado</p>
                         <p><strong>Alimentação:</strong> Nectarívora, alimentando-se principalmente de néctar e pólen das flores, podendo consumir pequenos insetos.</p>
                         <p><strong>Habitat:</strong> Cavernas, grutas e áreas de vegetação nativa do Cerrado.</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao em-perigo">Em perigo</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Em perigo">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo atual" aria-current="true" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -402,8 +480,16 @@
                         <p><strong>Bioma:</strong> Mata Atlântica</p>
                         <p><strong>Alimentação:</strong>Frutos, insetos, néctar e pequenos animais</p>
                         <p><strong>Habitat:</strong>Florestas de baixada do Rio de Janeiro<</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao em-perigo">Em Perigo</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Em perigo">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo atual" aria-current="true" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -443,8 +529,16 @@
                         <p><strong>Bioma:</strong> Mata Atlântica</p>
                         <p><strong>Alimentação:</strong>Herbívora</p>
                         <p><strong>Habitat:</strong>Florestas úmidas da Mata Atlântica</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -484,8 +578,16 @@
                         <p><strong>Bioma:</strong> Mata Atlântica</p>
                         <p><strong>Alimentação:</strong>Frutos, insetos e pequenos invertebrados</p>
                         <p><strong>Habitat:</strong>Florestas, restingas e áreas de vegetação secundária</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao pouco-preocupante">Pouco preocupante</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Pouco preocupante">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante atual" aria-current="true" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -531,8 +633,16 @@
                         <p><strong>Bioma:</strong> Pantanal</p>
                         <p><strong>Alimentação:</strong>Peixes, moluscos, répteis e insetos</p>
                         <p><strong>Habitat:</strong>Rios, lagoas, brejos e áreas alagadas</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao pouco-preocupante">Pouco preocupante</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Pouco preocupante">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante atual" aria-current="true" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -572,8 +682,16 @@
                         <p><strong>Bioma:</strong> Pantanal</p>
                         <p><strong>Alimentação:</strong>Gramíneas e plantas aquáticas</p>
                         <p><strong>Habitat:</strong>Várzeas, brejos e campos inundáveis</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -613,8 +731,16 @@
                         <p><strong>Bioma:</strong> Pantanal</p>
                         <p><strong>Alimentação:</strong>Peixes, insetos, aves e pequenos mamíferos</p>
                         <p><strong>Habitat:</strong>Rios, lagoas, brejos e áreas alagadas</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao pouco-preocupante">Pouco preocupante</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Pouco preocupante">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante atual" aria-current="true" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -660,8 +786,16 @@
                         <p><strong>Bioma:</strong> Pampa</p>
                         <p><strong>Alimentação:</strong>Pequenos mamíferos, aves e répteis</p>
                         <p><strong>Habitat:</strong>Campos, áreas arbustivas e bordas de mata</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao pouco-preocupante">Pouco preocupante</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Pouco preocupante">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante atual" aria-current="true" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -701,8 +835,16 @@
                         <p><strong>Bioma:</strong> Pampa</p>
                         <p><strong>Alimentação:</strong>Pequenos invertebrados, principalmente formigas</p>
                         <p><strong>Habitat:</strong>Campos naturais e ambientes úmidos próximos a rochas</p>
-                        <p><strong>Conservação:</strong>
-                        <span class="status-conservacao vulneravel">Vulnerável</span></p>
+                        <div class="conservacao">
+                            <p><strong>Conservação:</strong></p>
+                            <ol class="escala-conservacao" aria-label="Estado de conservação: Vulnerável">
+                                <li class="criticamente-perigo" title="Criticamente em perigo"><span>Criticamente em perigo</span></li>
+                                <li class="em-perigo" title="Em perigo"><span>Em perigo</span></li>
+                                <li class="vulneravel atual" aria-current="true" title="Vulnerável"><span>Vulnerável</span></li>
+                                <li class="quase-ameacada" title="Quase ameaçada"><span>Quase ameaçada</span></li>
+                                <li class="pouco-preocupante" title="Pouco preocupante"><span>Pouco preocupante</span></li>
+                            </ol>
+                        </div>
                     </div>
                     <div class="descricao">
                         <h4>Sobre a espécie</h4>
@@ -730,6 +872,11 @@
             </article>
         </section>
     </main>
+    <button class="voltar-topo" type="button" aria-label="Voltar ao início da página"> <!--botão de voltar ao topo-->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <footer> <!--rodapé do site - contatos-->
         <img src="../imagens/logo-missao-fauna.png">
         <p>
