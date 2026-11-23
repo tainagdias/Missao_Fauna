@@ -489,12 +489,16 @@ main section[id] {
    10. BOTÃO DE VOLTAR AO TOPO
    ========================================================= */
 .voltar-topo {
-    position: fixed; /* Fica parado no canto da tela */
-    right: 24px;
+    /* "Gruda" no canto da tela ao rolar, mas para logo antes do rodapé,
+       então nunca fica por cima dele (funciona em qualquer navegador) */
+    position: sticky;
     bottom: 24px;
+    align-self: flex-end; /* Canto direito (o body é flex em coluna) */
+    margin: -72px 24px 24px 0; /* Não ocupa espaço na página: -(48 + 24) */
     z-index: 20; /* Fica por cima de todo o conteúdo */
     width: 48px;
     height: 48px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -660,8 +664,8 @@ main section[id] {
 
     /* --- Botão de voltar ao topo mais perto do canto --- */
     .voltar-topo {
-        right: 16px;
         bottom: 16px;
+        margin: -60px 16px 16px 0; /* -(44 + 16) */
         width: 44px;
         height: 44px;
     }
