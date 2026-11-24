@@ -1,11 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regras do Jogo Missão Fauna</title>
+    <title> Missão Fauna Regras do Jogo </title>
+    <link rel="stylesheet" href="../missao-fauna-css.css">
+    <script src="../script.js" defer></script>
 </head>
 <body>
-    <h1>conteúdo dentro do site</h1>
+    <header> <!--cabeçalho do site-->
+        <div class="cabecalho">
+            <div> <!--div da imagem do logo-->
+                <a href="../index.html">
+                    <img src="../imagens/logo-missao-fauna.png" alt="Missão Fauna">
+                </a>
+            </div>
+            <button class="menu-burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"> <!--botão do menu no celular-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="menu-principal"> <!--menu de navegação-->
+                <ul>
+                    <li> <a href="../index.html"> Home </a> </li>
+                    <li> <a href="infomacoes.html"> Sobre </a> </li>
+                    <li> <a href="equipe.html"> Equipe </a> </li>
+                    <li> <a href="ajude-nossos-personagens.html"> Ajude Nossos Personagens </a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <nav class="submenu" aria-label="menu das Regras do Jogo"> <!--submenu-->
+            <a href="#como-jogar"> Como Jogar <small>Preparação</small> </a>
+            <a href="#desafios"> Desafios <small>Sua vez de jogar</small> </a>
+            <a href="#vitoria"> Vitória <small>Grande Explorador</small> </a>
+        </nav>
+
+        <section id="como-jogar" class="regras"> <!--seção como jogar: componentes, objetivo e preparação-->
+            <h2> Como jogar? </h2>
+            <ul class="regras-resumo"> <!--resumo da partida-->
+                <li> 2 a 4 jogadores <small>(ou até 4 grupos)</small> </li>
+                <li> A partir de 10 anos </li>
+                <li> Cerca de 30 minutos </li>
+            </ul>
+
+            <h3> Componentes </h3>
+            <ul>
+                <li> 1 tabuleiro dividido nos seis biomas brasileiros; </li>
+                <li> 1 dado com três categorias de perguntas: <b>C.S.R.</b> (Clima, Solo e Relevo), <b>Vegetação</b> e <b>Animais</b>. Cada categoria aparece em duas faces; </li>
+                <li> 1 baralho de 100 cartas: 85 cartas de Animal e 15 cartas de Contratempo; </li>
+                <li> 4 conjuntos de 6 broches de exploração, um para cada bioma; </li>
+                <li> 4 faixas de escoteiro, uma para cada jogador. </li>
+            </ul>
+            <img class="regras-imagem" src="../imagens/mockups-kit-escoteiro-missao-fauna.jpeg" alt="Kit do jogo Missão Fauna: tabuleiro, cartas, dado, broches e faixas de escoteiro">
+
+            <h3> Objetivo </h3>
+            <p>
+                Explore os seis biomas brasileiros, identifique os animais e responda aos desafios das cartas. Para conquistar o broche de um bioma, reúna uma carta de cada animal daquele bioma. Quem conquistar os seis broches primeiro vence e se torna o <b>Grande Explorador</b>.
+            </p>
+
+            <h3> Preparação </h3>
+            <ol>
+                <li> Coloque todos os broches de exploração perto do tabuleiro. </li>
+                <li> Embaralhe as cartas e forme um único monte, com as ilustrações dos animais voltadas para cima. </li>
+                <li> Escolham quem começa. As rodadas seguem no sentido horário. </li>
+            </ol>
+        </section>
+
+        <section id="desafios" class="regras"> <!--seção dos desafios: o que acontece na vez de cada jogador-->
+            <h2> Desafios </h2>
+
+            <div class="regras-passo">
+                <h3> <span class="regras-numero">1</span> Identificação </h3>
+                <p>
+                    O jogador à sua direita retira a primeira carta do monte e mostra a você somente a ilustração. Você deve responder: <i>“Qual é o animal apresentado e em qual bioma ele é encontrado?”</i>
+                </p>
+                <ul class="regras-resultado">
+                    <li class="acerto"> <b>Acertou o animal e o bioma?</b> Siga para o Desafio 2. </li>
+                    <li class="erro"> <b>Errou qualquer um dos dois?</b> A carta vai para o espaço do bioma dela no tabuleiro e a vez passa para o próximo jogador. </li>
+                </ul>
+            </div>
+
+            <div class="regras-passo">
+                <h3> <span class="regras-numero">2</span> Pergunta </h3>
+                <p>
+                    Lance o dado para sortear a categoria da pergunta: <b>C.S.R.</b> (Clima, Solo e Relevo), <b>Vegetação</b> ou <b>Animais</b>. O jogador que está com a carta lê a pergunta da categoria sorteada e as alternativas.
+                </p>
+                <ul class="regras-resultado">
+                    <li class="acerto"> <b>Acertou?</b> A carta é sua e entra na sua coleção. </li>
+                    <li class="erro"> <b>Errou?</b> A carta vai para o espaço do bioma dela no tabuleiro e a vez passa. </li>
+                </ul>
+            </div>
+
+            <h3> Carta de Contratempo </h3>
+            <p>
+                São situações inesperadas, que podem ser boas ou ruins para a sua expedição. Vire a carta e siga a instrução. Se for <b>sorte</b>, você fica com a carta. Se for <b>azar</b>, não pode ficar com ela. Depois disso, a vez passa.
+            </p>
+
+            <h3> Resgate de Campo </h3>
+            <p>
+                As cartas de animais que ninguém conquistou ficam nos espaços dos biomas no tabuleiro. No começo da sua vez, você pode fazer um Resgate de Campo em vez de retirar uma carta do monte.
+            </p>
+            <p> Você pode escolher qualquer carta do tabuleiro se: </p>
+            <ul>
+                <li> houver pelo menos uma carta em cada um dos seis biomas, <b>ou</b> </li>
+                <li> houver duas ou mais cartas no bioma da carta escolhida. </li>
+            </ul>
+            <p>
+                Para resgatar a carta, enfrente os dois desafios dela, como em uma retirada normal: primeiro a identificação do animal e do bioma, depois a pergunta sorteada pelo dado.
+            </p>
+            <ul class="regras-resultado">
+                <li class="acerto"> <b>Acertou?</b> A carta entra na sua coleção. </li>
+                <li class="erro"> <b>Errou?</b> A carta volta para o tabuleiro. </li>
+            </ul>
+            <p>
+                As outras cartas continuam no tabuleiro. Acertando ou errando, a vez passa para o próximo jogador.
+            </p>
+
+            <h3> Carta de bioma já conquistado </h3>
+            <p>
+                Se você tirar uma carta de um bioma cujo broche já conquistou, ela não entra na sua coleção. A carta volta para o fundo do baralho e o jogo segue normalmente.
+            </p>
+        </section>
+
+        <section id="vitoria" class="regras"> <!--seção da vitória: conquista dos biomas, vencedor e considerações-->
+            <h2> Conquista dos biomas </h2>
+            <div class="missao-conteudo"> <!--imagem da escoteira à esquerda e texto à direita-->
+                <img class="escoteira" src="../imagens/escoteira-sem-fundo.png" alt="Escoteira exploradora do Missão Fauna">
+                <div class="missao-texto">
+                    <p>
+                        Cada bioma tem seu próprio grupo de animais. Para conquistar o broche de um bioma, reúna uma carta de cada animal daquele grupo:
+                    </p>
+                    <ul>
+                        <li> <b>Amazônia:</b> 3 animais diferentes; </li>
+                        <li> <b>Caatinga:</b> 3 animais diferentes; </li>
+                        <li> <b>Cerrado:</b> 3 animais diferentes; </li>
+                        <li> <b>Mata Atlântica:</b> 3 animais diferentes; </li>
+                        <li> <b>Pantanal:</b> 3 animais diferentes; </li>
+                        <li> <b>Pampa:</b> 2 animais diferentes. </li>
+                    </ul>
+                    <p>
+                        Quando reunir todas as cartas de um bioma, pegue o broche de exploração dele.
+                    </p>
+                </div>
+            </div>
+
+            <h3> Vencedor </h3> <!--fora da div da escoteira, para começar embaixo da imagem-->
+            <p>
+                Vence o primeiro jogador a conquistar os seis broches de exploração: Amazônia, Caatinga, Cerrado, Mata Atlântica, Pantanal e Pampa. Ele completa sua expedição pelos biomas brasileiros e recebe o título de <b><i>Grande Explorador</i></b>.
+            </p>
+
+            <div class="regras-atencao"> <!--considerações importantes-->
+                <h3> Considerações importantes </h3>
+                <ul>
+                    <li> Alguns animais também vivem em outros biomas. No jogo, cada animal aparece no bioma em que é mais comum. </li>
+                    <li> As perguntas do verso das cartas são sobre o bioma do animal, não necessariamente sobre o animal da ilustração. </li>
+                    <li> Fique de olho no mapa do Brasil no tabuleiro. Ele traz dicas importantes para responder a várias perguntas do jogo. </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <button class="voltar-topo" type="button" aria-label="Voltar ao início da página"> <!--botão de voltar ao topo-->
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path d="M12 5l-7 7m7-7l7 7M12 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    <footer> <!--rodapé do site - contatos-->
+        <img src="../imagens/logo-missao-fauna.png" alt="Missão Fauna">
+        <p>
+             AVENTURA LTDA | CNPJ: 08.568.184/0001-53 | SAC 0800 010 9000 | 11 97435-4725 | contato@aventuraoficial.com
+        </p>
+    </footer>
 </body>
 </html>

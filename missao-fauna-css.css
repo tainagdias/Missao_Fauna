@@ -1085,3 +1085,169 @@ main section[id] {
         --espaco: 24px;
     }
 }
+
+
+/* =========================================================
+   REGRAS DO JOGO (mesmo visual de "folha de papel" do Diário de Campo)
+   ========================================================= */
+.regras {
+    background-color: var(--creme);
+    color: var(--marrom);
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.regras h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.regras h3 {
+    font-size: 1.4rem;
+    color: #4f8a5e; /* Verde dos títulos do manual */
+    margin: 28px 0 10px;
+}
+
+.regras p,
+.regras ul,
+.regras ol {
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.regras ul,
+.regras ol {
+    padding-left: 24px;
+}
+
+/* --- Resumo da partida (jogadores, idade, duração) --- */
+.regras ul.regras-resumo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.regras-resumo li {
+    background-color: var(--verdeapagado);
+    color: var(--verdeescuro);
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+
+.regras-resumo small {
+    font-weight: normal;
+}
+
+/* --- Imagem do kit --- */
+.regras-imagem {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 8px 0 8px;
+}
+
+/* --- Desafios 1 e 2 --- */
+.regras-passo {
+    border-left: 4px solid var(--verdeapagado);
+    padding-left: 20px;
+    margin-bottom: 24px;
+}
+
+.regras-passo h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+}
+
+.regras-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--verdeescuro);
+    color: var(--creme);
+    font-size: 1.1rem;
+}
+
+/* --- Acertou / Errou --- */
+.regras ul.regras-resultado {
+    list-style: none;
+    padding-left: 0;
+}
+
+.regras-resultado li {
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.regras-resultado .acerto {
+    background-color: rgba(123, 173, 136, 0.3);
+}
+
+.regras-resultado .erro {
+    background-color: rgba(41, 23, 11, 0.08);
+}
+
+/* --- Conquista dos biomas: texto ao lado da escoteira --- */
+.regras .missao-texto > :first-child {
+    margin-top: 0;
+}
+
+.regras .missao-texto > ul {
+    display: flow-root;
+}
+
+/* --- Considerações importantes --- */
+.regras-atencao {
+    background-color: rgba(123, 173, 136, 0.2);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-top: 24px;
+}
+
+.regras-atencao h3 {
+    margin-top: 0;
+    color: #6b5a2e; /* Tom marrom-dourado do manual */
+}
+
+.regras-atencao ul {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .regras {
+        width: 94%;
+        padding: 24px 20px;
+    }
+
+    .regras h2 {
+        font-size: 1.6rem;
+    }
+
+    .regras h3 {
+        font-size: 1.2rem;
+    }
+
+    .regras-passo {
+        padding-left: 14px;
+    }
+
+    .regras-atencao {
+        padding: 16px;
+    }
+}
